@@ -1,70 +1,104 @@
-
 import React from 'react';
 import { usePageTitle } from '../hooks/usePageTitle';
 
-const ContactForm: React.FC = () => {
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Placeholder for form submission logic
-    alert('Thank you for your message. We will get back to you shortly.');
-    (e.target as HTMLFormElement).reset();
-  };
-
-  const address = `The Scout Hall, Main Road, Coddington, NG24 2PN`;
-
-  return (
-    <div className="bg-white py-20 sm:py-24">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold font-heading text-textLightBg">Get In Touch</h1>
-          <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">We'd love to hear from you. Whether you have a question, a suggestion, or want to partner with us, please reach out.</p>
-        </div>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div className="bg-gray-50 p-8 rounded-lg">
-            <h2 className="text-2xl font-bold font-heading text-textLightBg mb-6">Send us a message</h2>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700">Your Name</label>
-                <input type="text" name="name" id="name" required className="mt-1 block w-full border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-primaryBrand focus:border-primaryBrand" />
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700">Your Email</label>
-                <input type="email" name="email" id="email" required className="mt-1 block w-full border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-primaryBrand focus:border-primaryBrand" />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700">Your Message</label>
-                <textarea name="message" id="message" rows={5} required className="mt-1 block w-full border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-primaryBrand focus:border-primaryBrand"></textarea>
-              </div>
-              <button type="submit" className="w-full bg-primaryBrand text-white font-semibold py-3 px-4 rounded-md shadow-md hover:bg-sky-700 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primaryBrand">
-                Send Message
-              </button>
-            </form>
-          </div>
-          <div className="space-y-8">
-            <div>
-              <h3 className="text-xl font-semibold text-textLightBg">Address</h3>
-              <address className="mt-2 not-italic text-gray-600">{address}</address>
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold text-textLightBg">Email</h3>
-              <p className="mt-2 text-gray-600">
-                <a href="mailto:info@coalitionforcyf-charity.org" className="text-primaryBrand hover:underline">info@coalitionforcyf-charity.org</a>
-              </p>
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold text-textLightBg">Phone</h3>
-              <p className="mt-2 text-gray-600">(555) 123-4567 (placeholder)</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
 const ContactPage: React.FC = () => {
-  usePageTitle("Contact Us | Blessed Children's Hope Foundation");
-  return <ContactForm />;
+    usePageTitle("Contact Us – Blessed Children's Hope Foundation");
+
+    return (
+        <div className="bg-white">
+            <div className="bg-gray-50 py-12 text-center">
+                <div className="container mx-auto px-4">
+                    <h1 className="text-4xl font-bold font-heading text-gray-900 mb-4">Contact Us</h1>
+                    <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                        We’d love to hear from you! Whether you have questions, want to volunteer, or just say hello.
+                    </p>
+                </div>
+            </div>
+
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                    <div>
+                        <h2 className="text-2xl font-bold font-heading text-gray-900 mb-8">Get In Touch</h2>
+
+                        <div className="space-y-8">
+                            <div className="flex items-start">
+                                <span className="flex-shrink-0 bg-primaryBrand/10 p-3 rounded-lg text-primaryBrand mr-4">
+                                    📍
+                                </span>
+                                <div>
+                                    <h3 className="font-bold text-gray-900 text-lg">Operational Office (Kenya)</h3>
+                                    <p className="text-gray-600">City Square, Nyamira, Kenya</p>
+                                    <p className="text-sm text-gray-500 mt-1">Visit us! Please arrange in advance.</p>
+                                </div>
+                            </div>
+
+                            <div className="flex items-start">
+                                <span className="flex-shrink-0 bg-primaryBrand/10 p-3 rounded-lg text-primaryBrand mr-4">
+                                    🏢
+                                </span>
+                                <div>
+                                    <h3 className="font-bold text-gray-900 text-lg">Registered Office (UK)</h3>
+                                    <p className="text-gray-600">3rd Floor, 86-90 Paul Street, London EC2A 4NE, United Kingdom</p>
+                                    <p className="text-sm text-gray-500 mt-1">Administrative only.</p>
+                                </div>
+                            </div>
+
+                            <div className="flex items-start">
+                                <span className="flex-shrink-0 bg-primaryBrand/10 p-3 rounded-lg text-primaryBrand mr-4">
+                                    📧
+                                </span>
+                                <div>
+                                    <h3 className="font-bold text-gray-900 text-lg">Email</h3>
+                                    <a href="mailto:contact@blessedchildrenshopefoundation.org" className="text-primaryBrand hover:underline">contact@blessedchildrenshopefoundation.org</a>
+                                </div>
+                            </div>
+
+                            <div className="flex items-start">
+                                <span className="flex-shrink-0 bg-primaryBrand/10 p-3 rounded-lg text-primaryBrand mr-4">
+                                    📞
+                                </span>
+                                <div>
+                                    <h3 className="font-bold text-gray-900 text-lg">Phone</h3>
+                                    <p className="text-gray-600">+61 408 319 260</p>
+                                    <p className="text-sm text-gray-500 mt-1">WhatsApp enabled. (Kenya time GMT+3)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
+                        <h2 className="text-2xl font-bold font-heading text-gray-900 mb-6">Send a Message</h2>
+                        <form className="space-y-4">
+                            <div>
+                                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                                <input type="text" id="name" className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primaryBrand focus:border-primaryBrand" placeholder="Your Name" />
+                            </div>
+                            <div>
+                                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                <input type="email" id="email" className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primaryBrand focus:border-primaryBrand" placeholder="your@email.com" />
+                            </div>
+                            <div>
+                                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                                <select id="subject" className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primaryBrand focus:border-primaryBrand">
+                                    <option>General Inquiry</option>
+                                    <option>Volunteering</option>
+                                    <option>Donation</option>
+                                    <option>Partnership</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                                <textarea id="message" rows={4} className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primaryBrand focus:border-primaryBrand" placeholder="How can we help?"></textarea>
+                            </div>
+                            <button type="button" className="w-full bg-primaryBrand text-white py-3 rounded-md font-bold hover:bg-sky-600 transition-colors">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
 };
 
 export default ContactPage;
