@@ -8,6 +8,7 @@ import GetInvolvedPage from './pages/GetInvolvedPage';
 import ContactPage from './pages/ContactPage';
 import PrivacyPage from './pages/PrivacyPage';
 import TermsPage from './pages/TermsPage';
+import ThankYouPage from './pages/ThankYouPage';
 
 // Simple ScrollToTop component
 const ScrollToTop = () => {
@@ -31,6 +32,7 @@ const App: React.FC = () => {
           <Route path="programs" element={<ProgramsPage />} />
           <Route path="get-involved" element={<GetInvolvedPage />} />
           <Route path="contact" element={<ContactPage />} />
+          <Route path="thank-you" element={<ThankYouPage />} />
           <Route path="privacy" element={<PrivacyPage />} />
           <Route path="terms" element={<TermsPage />} />
         </Route>

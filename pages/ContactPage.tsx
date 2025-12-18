@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { FormEvent } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { usePageTitle } from '../hooks/usePageTitle';
 
 const ContactPage: React.FC = () => {
     usePageTitle("Contact Us – Blessed Children's Hope Foundation");
+    const navigate = useNavigate();
+
+    const handleSubmit = (e: FormEvent) => {
+        e.preventDefault();
+        // In a real app, you would send the form data to a backend here.
+        // For now, we simulate success and redirect.
+        navigate('/thank-you');
+    };
 
     return (
         <div className="bg-white">
@@ -68,7 +77,7 @@ const ContactPage: React.FC = () => {
 
                     <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
                         <h2 className="text-2xl font-bold font-heading text-gray-900 mb-6">Send a Message</h2>
-                        <form className="space-y-4">
+                        <form className="space-y-4" onSubmit={handleSubmit}>
                             <div>
                                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Name</label>
                                 <input type="text" id="name" className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primaryBrand focus:border-primaryBrand" placeholder="Your Name" />
@@ -90,7 +99,7 @@ const ContactPage: React.FC = () => {
                                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Message</label>
                                 <textarea id="message" rows={4} className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primaryBrand focus:border-primaryBrand" placeholder="How can we help?"></textarea>
                             </div>
-                            <button type="button" className="w-full bg-primaryBrand text-white py-3 rounded-md font-bold hover:bg-sky-600 transition-colors">
+                            <button type="submit" className="w-full bg-primaryBrand text-white py-3 rounded-md font-bold hover:bg-sky-600 transition-colors">
                                 Send Message
                             </button>
                         </form>
